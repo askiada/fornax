@@ -8,7 +8,22 @@
 An implementation of [NeMa: Fast Graph Search with Label Similarity](http://www.vldb.org/pvldb/vol6/p181-khan.pdf) using python3 and sqlite or postgres.
 
 <!-- do not use a relative path because it won't work on PyPI -->
+
 ![FORNAX](https://github.com/digicatapult/fornax/raw/master/docs/img/fornax.png)
+
+## Insatll Docker Tutorial
+
+To build the image
+
+```bash
+docker build -t fornax-tuto -f Dockerfile-tuto .
+```
+
+To run jupyter notebook
+
+```bash
+docker run -p 8888:8888 fornax-tuto
+```
 
 ## Install
 
@@ -58,8 +73,8 @@ python run_test.py
 
 See the tutorials for a full working example.
 
-* [Part 1](docs/tutorial/tutorial1.ipynb) - Download a small graph dataset
-* [Part 2](docs/tutorial/tutorial2.ipynb) - Search the dataset using fornax
+-   [Part 1](docs/tutorial/tutorial1.ipynb) - Download a small graph dataset
+-   [Part 2](docs/tutorial/tutorial2.ipynb) - Search the dataset using fornax
 
 ### Install Tutorial Dependencies (using conda)
 
