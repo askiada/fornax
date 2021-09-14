@@ -1,6 +1,7 @@
 import os
 import sys
-from setuptools import setup, find_packages
+
+from setuptools import find_packages, setup
 from setuptools.command.install import install
 
 # circleci.py version
@@ -9,6 +10,7 @@ VERSION = __version__
 
 with open('README.md') as fp:
     long_description = fp.read()
+
 
 class VerifyVersionCommand(install):
     """Custom command to verify that the git tag matches our version"""
@@ -23,6 +25,7 @@ class VerifyVersionCommand(install):
             )
             sys.exit(info)
 
+
 setup(
     name='fornax',
     version=VERSION,
@@ -34,6 +37,10 @@ setup(
         'SQLAlchemy>=1.2.8',
         'numpy>-1.14.5'
     ],
+    extras_require={
+        'interactive': ['matplotlib', 'jupyter'],
+        'tuto': ['pandas', 'SPARQLWrapper', 'networkx']
+    },
     author_email='daniel.staff@digicatapult.org.uk',
     long_description=long_description,
     long_description_content_type='text/markdown',
